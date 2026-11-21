@@ -9,5 +9,14 @@ wheels/
 # Virtual environments
 .venv
 
+# Environment variables
 .env
+
+# Database snapshot
 data/raw/acos.sql
+
+# PyCharm
+.idea/
+
+# Extracted A-GOS data
+data/raw/
