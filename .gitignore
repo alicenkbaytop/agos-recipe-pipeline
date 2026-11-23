@@ -10,4 +10,4 @@ wheels/
 .venv
 
 .env
-data/raw/acos.sql
+data/raw/
