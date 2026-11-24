@@ -89,4 +89,4 @@ def ora_data_load(repo_url, collection=None):
 
 
 if __name__ == "__main__":
-    ora_data_load()
+    ora_data_load() # Link
