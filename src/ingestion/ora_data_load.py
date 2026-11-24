@@ -1,13 +1,11 @@
 import json
 import subprocess
 from pathlib import Path
-
+from config import ORA_RAW_DIR, ORA_REPO_DIR
 import pandas as pd
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-
-REPO_DIR = PROJECT_ROOT / "data" / "raw" / "open_recipe_archive_repo"
-OUTPUT_DIR = PROJECT_ROOT / "data" / "raw"
+REPO_DIR = ORA_REPO_DIR
+OUTPUT_DIR = ORA_RAW_DIR
 
 
 def download_repository(repo_url, repo_dir):
@@ -88,5 +86,4 @@ def ora_data_load(repo_url, collection=None):
     return df
 
 
-if __name__ == "__main__":
-    ora_data_load() # Link
+

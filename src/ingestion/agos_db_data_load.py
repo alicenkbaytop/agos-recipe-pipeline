@@ -13,7 +13,7 @@ from config import (
     TARGET_CUISINES,
     CATEGORY_PATTERNS,
     DEFAULT_TABLES,
-    RAW_DATA_DIR,
+    AGOS_RAW_DIR,
 )
 
 
@@ -189,7 +189,7 @@ def agos_db_data_load():
         table_summary = extract_tables(
             engine=engine,
             tables=DEFAULT_TABLES,
-            output_dir=RAW_DATA_DIR,
+            output_dir=AGOS_RAW_DIR,
         )
 
         total_records = sum(table_summary.values())
@@ -198,7 +198,7 @@ def agos_db_data_load():
         print(f"Filtered recipes: {recipe_count}")
         print(f"Supporting tables: {len(table_summary)}")
         print(f"Supporting table records: {total_records}")
-        print(f"Output directory: {RAW_DATA_DIR}")
+        print(f"Output directory: {AGOS_RAW_DIR}")
 
         return {
             "recipe_count": recipe_count,

@@ -16,7 +16,7 @@ HF_RAW_DIR = RAW_DATA_DIR / "hf"
 ORA_RAW_DIR = RAW_DATA_DIR / "ora"
 ORA_REPO_DIR = RAW_DATA_DIR / "open_recipe_archive_repo"
 
-FILTERED_RECIPES_DIR = RAW_DATA_DIR / "filtered_recipes"
+FILTERED_RECIPES_DIR = AGOS_RAW_DIR / "filtered_recipes"
 
 FILTERED_RECIPES_FILE = FILTERED_RECIPES_DIR / "filtered_recipes.csv"
 
