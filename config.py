@@ -11,10 +11,22 @@ DATA_DIR = PROJECT_ROOT / "data"
 RAW_DATA_DIR = DATA_DIR / "raw"
 PROCESSED_DATA_DIR = DATA_DIR / "processed"
 
+# Raw data directories
 AGOS_RAW_DIR = RAW_DATA_DIR / "agos"
 HF_RAW_DIR = RAW_DATA_DIR / "hf"
 ORA_RAW_DIR = RAW_DATA_DIR / "ora"
+
 ORA_REPO_DIR = RAW_DATA_DIR / "open_recipe_archive_repo"
+
+# Processed data directories
+AGOS_PROCESSED_DIR = PROCESSED_DATA_DIR / "agos"
+HF_PROCESSED_DIR = PROCESSED_DATA_DIR / "hf"
+ORA_PROCESSED_DIR = PROCESSED_DATA_DIR / "ora"
+
+
+# --------------------------------------------------
+# AGOS FILTERED RECIPES
+# --------------------------------------------------
 
 FILTERED_RECIPES_DIR = AGOS_RAW_DIR / "filtered_recipes"
 

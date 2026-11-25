@@ -3,19 +3,20 @@ import pandas as pd
 from config import (
     HF_RAW_DIR,
     ORA_RAW_DIR,
-    PROCESSED_DATA_DIR
+    HF_PROCESSED_DIR,
+    ORA_PROCESSED_DIR,
 )
-
 
 # -----------------------------------------
 # FILTER HUGGING FACE RECIPES
 # -----------------------------------------
 
+
 def filter_hf_recipes():
 
     input_file = HF_RAW_DIR / "allrecipes_train.csv"
 
-    output_dir = PROCESSED_DATA_DIR / "hf"
+    output_dir = HF_PROCESSED_DIR
     output_dir.mkdir(parents=True, exist_ok=True)
 
     df = pd.read_csv(input_file)
@@ -25,15 +26,11 @@ def filter_hf_recipes():
         "main-dish",
         "salad",
         "soups-stews-and-chili",
-        "protein"
+        "protein",
     ]
 
     filtered_df = df[
-        df["category"]
-        .astype("string")
-        .str.strip()
-        .str.lower()
-        .isin(target_categories)
+        df["category"].astype("string").str.strip().str.lower().isin(target_categories)
     ].copy()
 
     output_file = output_dir / "hf_filtered_recipes.csv"
@@ -50,11 +47,12 @@ def filter_hf_recipes():
 # FILTER OPEN RECIPE ARCHIVE RECIPES
 # -----------------------------------------
 
+
 def filter_ora_recipes():
 
     input_file = ORA_RAW_DIR / "ora_all_collections.csv"
 
-    output_dir = PROCESSED_DATA_DIR / "ora"
+    output_dir = ORA_PROCESSED_DIR
     output_dir.mkdir(parents=True, exist_ok=True)
 
     df = pd.read_csv(input_file)
@@ -65,15 +63,11 @@ def filter_ora_recipes():
         "turkey",
         "russian",
         "ukraine",
-        "indonesia"
+        "indonesia",
     ]
 
     filtered_df = df[
-        df["culture"]
-        .astype("string")
-        .str.strip()
-        .str.lower()
-        .isin(target_cultures)
+        df["culture"].astype("string").str.strip().str.lower().isin(target_cultures)
     ].copy()
 
     output_file = output_dir / "ora_filtered_recipes.csv"
@@ -89,6 +83,7 @@ def filter_ora_recipes():
 # -----------------------------------------
 # FILTER ALL RECIPE DATASETS
 # -----------------------------------------
+
 
 def filter_recipe_datasets():
 
