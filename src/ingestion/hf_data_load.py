@@ -1,10 +1,11 @@
 from datasets import load_dataset
 from pathlib import Path
+from config import HF_RAW_DIR
 
 
 def hf_data_load(dataset_name, output_name):
 
-    output_dir = Path("data/raw")
+    output_dir = HF_RAW_DIR
     output_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"Loading dataset: {dataset_name}")
