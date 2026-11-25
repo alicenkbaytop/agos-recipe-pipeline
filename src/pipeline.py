@@ -1,6 +1,8 @@
 from src.ingestion.hf_data_load import hf_data_load
 from src.ingestion.ora_data_load import ora_data_load
 from src.ingestion.agos_db_data_load import agos_db_data_load
+from src.processing.title_processing import process_titles
+from src.processing.cuisine_processing import process_cuisines
 
 ORA_REPO_URL = "https://github.com/adambouhmad/open-recipe-archive.git"
 
@@ -27,9 +29,17 @@ def pipeline():
     # all_ora_data = ora_data_load(ORA_REPO_URL)
 
     # 3. A-GOS database
-    agos_data = agos_db_data_load()
+    # agos_data = agos_db_data_load()
 
-    print("\nData ingestion completed!")
+    # process_titles(
+    #     input_path="data/raw/allrecipes_train.csv",
+    #     output_path="data/processed/allrecipes_processed.csv"
+    # )
+
+    # process_cuisines(
+    #     input_path="data/interim/allrecipes_test.csv",
+    #     output_path="data/processed/allrecipes_cuisine_test.csv",
+    # )
 
 
 if __name__ == "__main__":
