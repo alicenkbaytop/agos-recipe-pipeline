@@ -8,6 +8,7 @@
 
 ## Project Structure
 
+```text
 agos-recipe-pipeline/
 ├── config.py
 ├── data/
@@ -26,3 +27,4 @@ agos-recipe-pipeline/
     ├── standardization/
     ├── cleaning/
     └── processing/
+```
